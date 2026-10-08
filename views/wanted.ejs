@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanted</title>
+</head>
+<body>
+    <h1>Wanted</h1>
+    <h2><%= wanted.name %></h2>
+
+    <img src="<%= wanted.profile %>" alt="<%= wanted.name %> fényképe" style="width: 200px;" >>
+
+    <table>
+      <tr>
+        <th>Életkor:</th>
+        <td><%= wanted.age %> év</td>
+      </tr>
+      <tr>
+        <th>Szőr:</th>
+        <td><%= wanted.hair %></td>
+      </tr>
+      <tr>
+        <th>Szem:</th>
+        <td><%= wanted.eye %></td>
+      </tr>
+      <tr>
+        <th>Utoljára látták:</th>
+        <td><%= wanted.lastSeenDate %></td>
+      </tr>
+      <tr>
+        <th>Helyszín:</th>
+        <td><%= wanted.lastSeenAt %></td>
+      </tr>
+    </table>
+
+    <div class="lists">
+      <h3>Bűncselekmények</h3>
+      <ul>
+        <% wanted.crimes.forEach(function (crime) { %>
+          <li><%= crime %></li>
+        <% }); %>
+      </ul>
+
+      <h3>Hobbik</h3>
+      <ul>
+        <% wanted.hobbies.forEach(function (hobby) { %>
+          <li><%= hobby %></li>
+        <% }); %>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
